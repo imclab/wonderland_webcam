@@ -21,12 +21,10 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-    
-    ofVideoGrabber vidGrabber;
-    ofImage tbIm;
-    ofxCvColorImage	 cvIm;
-    ofxCvGrayscaleImage cvGrIm[3];
-    ofxCvContourFinder cvContour[3];
+        void meshInit();
+        void meshWarp();
+        void imageUpdate();
+        void applyLaplacian();
     
     int threshNum;
     ofTexture tex;
@@ -37,5 +35,12 @@ class testApp : public ofBaseApp{
     vector< ofVec3f > vertexCoords;
     int coordLength, coordX, coordY, camWidth, camHeight;
     float ratioCoordX, ratioCoordY;
+    
+    ofVideoGrabber vidGrabber;
+    ofImage tbIm;
+    ofxCvColorImage	 cvIm;
+    ofxCvGrayscaleImage cvGrIm[6];
+    ofxCvContourFinder cvContour[6];
+
 		
 };
